@@ -1,13 +1,11 @@
 import { useEffect, useState, useContext } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "../AuthProvider";
 
 const UpdateBlog = () => {
   const { id } = useParams();
   const { user } = useContext(AuthContext);
-  const navigate = useNavigate();
-
   const [blog, setBlog] = useState(null);
   const [formData, setFormData] = useState({
     title: "",

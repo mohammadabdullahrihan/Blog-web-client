@@ -18,8 +18,6 @@ const Login = () => {
   const auth = getAuth();
   const [passwordVisible, setPasswordVisible] = useState(false);
   const googleProvider = new GoogleAuthProvider();
-  const githubProvider = new GithubAuthProvider();
-
   const handleLogin = (event) => {
     event.preventDefault();
     const email = event.target.email.value;
