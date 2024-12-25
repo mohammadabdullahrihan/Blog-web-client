@@ -19,7 +19,7 @@ const ErrorPage = () => {
         
         {/* image */}
         <div>
-          <img className="w-full rounded-[100px] md:p-10 lg:p-0 p-5 " src={bg} alt="" />
+          <img className="w-full rounded-[100px] md:p-10 lg:p-0 p-5 " src={bg} />
         </div>
       </div>
      

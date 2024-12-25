@@ -7,19 +7,22 @@ import { toast } from "react-toastify";
 const AllBlogs = () => {
   const { user } = useContext(AuthContext);
   const [blogs, setBlogs] = useState([]);
-  const [categories, setCategories] = useState([]); 
+  const [categories, setCategories] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
 
   // Fetch blogs from the backend
   const fetchBlogs = async () => {
     try {
-      const response = await axios.get("https://blog-web-server-kappa.vercel.app/blogs", {
-        params: {
-          category: selectedCategory,
-          title: searchQuery,
-        },
-      });
+      const response = await axios.get(
+        "https://blog-web-server-kappa.vercel.app/blogs",
+        {
+          params: {
+            category: selectedCategory,
+            title: searchQuery,
+          },
+        }
+      );
       setBlogs(response.data);
     } catch (err) {
       console.error("Error fetching blogs:", err);
@@ -79,13 +82,11 @@ const AllBlogs = () => {
           className="border rounded-lg px-4 py-2"
         >
           <option value="">All Categories</option>
-          {
-            categories.map((category, index) => (
-              <option key={index} value={category}>
-                {category}
-              </option>
-            ))
-          }
+          {categories.map((category, index) => (
+            <option key={index} value={category}>
+              {category}
+            </option>
+          ))}
         </select>
       </form>
 
@@ -97,31 +98,34 @@ const AllBlogs = () => {
             data-aos="fade-up"
             className="bg-black rounded-2xl shadow-lg hover:shadow-xl transition-shadow p-4"
           >
-            <img className="w-[400px] h-[300px] object-cover " src={blog?.image} alt="" />
-            <h3 className="text-xl text-white font-semibold mb-2">{blog.title}</h3>
+            <img
+              className="w-[400px] h-[300px] object-cover "
+              src={blog?.image}
+              alt=""
+            />
+            <h3 className="text-xl text-white font-semibold mb-2">
+              {blog.title}
+            </h3>
             <p className="text-white mb-4">{blog.shortDescription}</p>
 
-            {
-              user ? [
-              <>
-                  <button
-                    onClick={() => handleAddToWishlist(blog)}
-                    className="text-black bg-white  rounded-full px-6 py-4 hover:text-white hover:bg-black hover:border-2 border-white transition-all duration-300 ease-in-out mr-5"
-                  >
-                    Add to Wishlist
-                  </button>
-
-                  <Link to={`/blog/${blog._id}`}>
-                    <button className="text-black bg-white  rounded-full px-6 py-4 hover:text-white hover:bg-black hover:border-2 border-white transition-all duration-300 ease-in-out" >
-                      Details
+            {user
+              ? [
+                  <>
+                    <button
+                      onClick={() => handleAddToWishlist(blog)}
+                      className="text-black bg-white  rounded-full px-6 py-4 hover:text-white hover:bg-black hover:border-2 border-white transition-all duration-300 ease-in-out mr-5"
+                    >
+                      Add to Wishlist
                     </button>
-                  </Link>
-              </>
-              ]
-               : []
-            }
 
-
+                    <Link to={`/blog/${blog._id}`}>
+                      <button className="text-black bg-white  rounded-full px-6 py-4 hover:text-white hover:bg-black hover:border-2 border-white transition-all duration-300 ease-in-out">
+                        Details
+                      </button>
+                    </Link>
+                  </>,
+                ]
+              : []}
           </div>
         ))}
       </div>

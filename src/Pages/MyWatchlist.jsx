@@ -102,7 +102,7 @@ const WishlistPage = () => {
                 </td>
                 <td className="border px-4 py-2 text-center">
                   <Link to={`/blog/${item.blogId}`}>
-                    <button className="text-white bg-black  rounded-full px-6 py-4 hover:text-black hover:bg-white hover:border border-black transition-all duration-300 ease-in-out" >
+                    <button className="text-white bg-black  rounded-full px-6 py-4 hover:text-black hover:bg-white hover:border border-black transition-all duration-300 ease-in-out">
                       Details
                     </button>
                   </Link>

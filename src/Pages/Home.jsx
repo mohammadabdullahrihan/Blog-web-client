@@ -5,9 +5,9 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import bgnews from '/public/review.jpg'
-import phone from '/public/phone.png'
-import { motion } from "motion/react"
+import bgnews from "/public/review.jpg";
+import phone from "/public/phone.png";
+import { motion } from "motion/react";
 
 const Home = () => {
   const { user } = useContext(AuthContext);
@@ -95,28 +95,33 @@ const Home = () => {
               data-aos="fade-up"
               className="bg-black rounded-2xl shadow-lg hover:shadow-xl transition-shadow p-4"
             >
-              <img className="w-[400px] h-[300px] object-cover " src={blog?.image} alt="" />
-              <h3 className="text-xl text-white font-semibold mb-2">{blog.title}</h3>
+              <img
+                className="w-[400px] h-[300px] object-cover "
+                src={blog?.image}
+                alt=""
+              />
+              <h3 className="text-xl text-white font-semibold mb-2">
+                {blog.title}
+              </h3>
               <p className="text-white mb-4">{blog.shortDescription}</p>
-              {
-                user ? [
-                  <>
-                    <button
-                      onClick={() => handleAddToWishlist(blog)}
-                      className="text-black bg-white  rounded-full px-6 py-4 hover:text-white hover:bg-black hover:border-2 border-white transition-all duration-300 ease-in-out mr-5"
-                    >
-                      Add to Wishlist
-                    </button>
-
-                    <Link to={`/blog/${blog._id}`}>
-                      <button className="text-black bg-white  rounded-full px-6 py-4 hover:text-white hover:bg-black hover:border-2 border-white transition-all duration-300 ease-in-out" >
-                        Details
+              {user
+                ? [
+                    <>
+                      <button
+                        onClick={() => handleAddToWishlist(blog)}
+                        className="text-black bg-white  rounded-full px-6 py-4 hover:text-white hover:bg-black hover:border-2 border-white transition-all duration-300 ease-in-out mr-5"
+                      >
+                        Add to Wishlist
                       </button>
-                    </Link>
-                  </>
-                ]
-                  : []
-              }
+
+                      <Link to={`/blog/${blog._id}`}>
+                        <button className="text-black bg-white  rounded-full px-6 py-4 hover:text-white hover:bg-black hover:border-2 border-white transition-all duration-300 ease-in-out">
+                          Details
+                        </button>
+                      </Link>
+                    </>,
+                  ]
+                : []}
             </div>
           ))}
         </div>
@@ -157,7 +162,11 @@ const Home = () => {
         transition={{ duration: 1, ease: "easeOut" }} // Transition configuration
       >
         <div>
-          <img className="rounded-l-[50px]" src={bgnews} alt="Newsletter Background" />
+          <img
+            className="rounded-l-[50px]"
+            src={bgnews}
+            alt="Newsletter Background"
+          />
         </div>
 
         <div className="bg-black lg:px-[180px] lg:py-[30px] rounded-r-[50px]">
@@ -168,7 +177,10 @@ const Home = () => {
             <p className="mb-5 text-white">
               Subscribe to our newsletter to receive our daily reviews
             </p>
-            <form onSubmit={handleSubscribe} className="items-center space-x-4 rounded-3xl">
+            <form
+              onSubmit={handleSubscribe}
+              className="items-center space-x-4 rounded-3xl"
+            >
               <input
                 type="email"
                 placeholder="Enter your email"
@@ -186,41 +198,46 @@ const Home = () => {
       </motion.div>
 
       <div className="lg:flex">
-
-        <div className="bg-black lg:px-[50px] lg:py-[30px] rounded-[50px]" >
+        <div className="bg-black lg:px-[50px] lg:py-[30px] rounded-[50px]">
           <div className="px-4 text-center bg-black">
-            <h2 className="text-6xl font-bold mb-6 text-white">Subscribe to our newsletter <br /> to receive our daily reviews</h2>
-            <p className="mb-5 text-white">Subscribe to our newsletter to receive our daily reviews</p>
-
+            <h2 className="text-6xl font-bold mb-6 text-white">
+              Subscribe to our newsletter <br /> to receive our daily reviews
+            </h2>
+            <p className="mb-5 text-white">
+              Subscribe to our newsletter to receive our daily reviews
+            </p>
           </div>
         </div>
         <div>
           <img className="rounded-r-[50px] " src={phone} alt="" />
         </div>
-
       </div>
 
       <div className="lg:flex">
-        <div className="bg-black p-10 lg
-            :rounded-l-[50px] rounded-t-[50px] ">
-
+        <div
+          className="bg-black p-10 lg
+            :rounded-l-[50px] rounded-t-[50px] "
+        >
           <div className="flex flex-col bg-white rounded-3xl lg:p-[120px]">
             <div className="px-6 py-8 sm:p-10 sm:pb-6">
               <div className="grid items-center justify-center w-full grid-cols-1 text-left">
                 <div>
-                  <h2
-                    className="text-lg font-medium tracking-tighter text-gray-600 lg:text-3xl"
-                  >
+                  <h2 className="text-lg font-medium tracking-tighter text-gray-600 lg:text-3xl">
                     Starter
                   </h2>
-                  <p className="mt-2 text-sm text-gray-500">Suitable to grow steadily.</p>
+                  <p className="mt-2 text-sm text-gray-500">
+                    Suitable to grow steadily.
+                  </p>
                 </div>
                 <div className="mt-6">
                   <p>
                     <span className="text-5xl font-light tracking-tight text-black">
                       $25
                     </span>
-                    <span className="text-base font-medium text-gray-500"> /mo </span>
+                    <span className="text-base font-medium text-gray-500">
+                      {" "}
+                      /mo{" "}
+                    </span>
                   </p>
                 </div>
               </div>
@@ -235,19 +252,19 @@ const Home = () => {
               </a>
             </div>
           </div>
-
-
         </div>
 
-        <div className="bg-black lg:px-[50px] lg:py-[30px] lg:rounded-r-[50px] rounded-b-[50px]" >
+        <div className="bg-black lg:px-[50px] lg:py-[30px] lg:rounded-r-[50px] rounded-b-[50px]">
           <div className="px-4 text-center bg-black">
-            <h2 className="text-6xl font-bold mb-6 text-white">Get Premium access</h2>
-            <p className="mb-5 text-white">Buy Subscription to get premium access</p>
-
+            <h2 className="text-6xl font-bold mb-6 text-white">
+              Get Premium access
+            </h2>
+            <p className="mb-5 text-white">
+              Buy Subscription to get premium access
+            </p>
           </div>
         </div>
       </div>
-
     </div>
   );
 };

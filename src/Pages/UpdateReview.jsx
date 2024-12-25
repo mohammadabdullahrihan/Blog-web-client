@@ -19,7 +19,9 @@ const UpdateBlog = () => {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const response = await fetch(`https://blog-web-server-kappa.vercel.app/blogs/${id}`);
+        const response = await fetch(
+          `https://blog-web-server-kappa.vercel.app/blogs/${id}`
+        );
         const data = await response.json();
         setBlog(data);
         setFormData({
@@ -44,13 +46,16 @@ const UpdateBlog = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`https://blog-web-server-kappa.vercel.app/updateblogs/${id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        `https://blog-web-server-kappa.vercel.app/updateblogs/${id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Failed to update blog.");

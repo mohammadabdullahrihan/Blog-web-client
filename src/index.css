@@ -38,7 +38,7 @@
   box-shadow: rgba(232, 196, 128, 0.878) 0px 30px 30px -20px;
   margin: 10px;
   background: #f7ba2b;
- background: var(--background);
+  background: var(--background);
 }
 
 .heading {
@@ -351,7 +351,6 @@
   margin-bottom: 1px;
 }
 
-
 .loader {
   --s: 15px;
   width: calc(var(--s) * 2.33);
@@ -378,7 +377,6 @@
     transform: rotate(-270deg);
   }
 }
-
 
 .form-container {
   max-width: 400px;
@@ -565,5 +563,3 @@
   background: #e4405f;
   color: #fff;
 }
-
-

@@ -27,8 +27,8 @@ const Login = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((result) => {
         toast.success("Login successful!");
-          toast.info("Welcome Back!");
-          navigate("/");
+        toast.info("Welcome Back!");
+        navigate("/");
       })
       .catch((error) => {
         if (error.code === "auth/wrong-password") {
@@ -53,10 +53,9 @@ const Login = () => {
     signInWithPopup(auth, googleProvider)
       .then((result) => {
         const user = result.user;
-          toast.success("Google login successful!");
-          toast.info("Welcome Back!");
-          navigate("/");
-        
+        toast.success("Google login successful!");
+        toast.info("Welcome Back!");
+        navigate("/");
       })
       .catch((error) => {
         if (error.code === "auth/popup-closed-by-user") {
@@ -72,7 +71,6 @@ const Login = () => {
         setLoading(false);
       });
   };
-
 
   return (
     <div>
@@ -110,7 +108,7 @@ const Login = () => {
                   {passwordVisible ? <FaEyeSlash /> : <FaEye />}
                 </button>
               </div>
-             
+
               <input
                 value="Login"
                 type="submit"
@@ -118,12 +116,13 @@ const Login = () => {
               />
 
               <div className="flex">
-              <h1>you Don't have a account?</h1>
-              <Link
-              to="/register"
-              className="text-blue-500 hover:text-blue-600 transition-all duration-200 ml-1" >
-                Register
-              </Link>
+                <h1>you Don't have a account?</h1>
+                <Link
+                  to="/register"
+                  className="text-blue-500 hover:text-blue-600 transition-all duration-200 ml-1"
+                >
+                  Register
+                </Link>
               </div>
             </form>
           </div>
@@ -160,7 +159,6 @@ const Login = () => {
                   </svg>
                   Google
                 </button>
-  
               </div>
             </div>
             <span className="agreement">

@@ -114,7 +114,9 @@ const Navbar = () => {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              isActive ? "text-white bg-black  rounded-full px-6 py-4 hover:text-black hover:bg-white hover:border border-black transition-all duration-300 ease-in-out" : "px-6 py-4 border border-black transition-all duration-300 ease-in-out rounded-full hover:bg-black hover:text-white"
+              isActive
+                ? "text-white bg-black  rounded-full px-6 py-4 hover:text-black hover:bg-white hover:border border-black transition-all duration-300 ease-in-out"
+                : "px-6 py-4 border border-black transition-all duration-300 ease-in-out rounded-full hover:bg-black hover:text-white"
             }
           >
             Home
@@ -123,7 +125,9 @@ const Navbar = () => {
           <NavLink
             to="/allblogs"
             className={({ isActive }) =>
-              isActive ? "text-white bg-black  rounded-full px-6 py-4 hover:text-black hover:bg-white hover:border border-black transition-all duration-300 ease-in-out" : "px-6 py-4 border border-black transition-all duration-300 ease-in-out rounded-full hover:bg-black hover:text-white"
+              isActive
+                ? "text-white bg-black  rounded-full px-6 py-4 hover:text-black hover:bg-white hover:border border-black transition-all duration-300 ease-in-out"
+                : "px-6 py-4 border border-black transition-all duration-300 ease-in-out rounded-full hover:bg-black hover:text-white"
             }
           >
             All Blogs
@@ -132,7 +136,9 @@ const Navbar = () => {
           <NavLink
             to="/featuredblogs"
             className={({ isActive }) =>
-              isActive ? "text-white bg-black  rounded-full px-6 py-4 hover:text-black hover:bg-white hover:border border-black transition-all duration-300 ease-in-out" : "px-6 py-4 border border-black transition-all duration-300 ease-in-out rounded-full hover:bg-black hover:text-white"
+              isActive
+                ? "text-white bg-black  rounded-full px-6 py-4 hover:text-black hover:bg-white hover:border border-black transition-all duration-300 ease-in-out"
+                : "px-6 py-4 border border-black transition-all duration-300 ease-in-out rounded-full hover:bg-black hover:text-white"
             }
           >
             Featured Blogs
@@ -143,7 +149,9 @@ const Navbar = () => {
               <NavLink
                 to="/addblog"
                 className={({ isActive }) =>
-                  isActive ? "text-white bg-black  rounded-full px-6 py-4 hover:text-black hover:bg-white hover:border border-black transition-all duration-300 ease-in-out" : "px-6 py-4 border border-black transition-all duration-300 ease-in-out rounded-full hover:bg-black hover:text-white"
+                  isActive
+                    ? "text-white bg-black  rounded-full px-6 py-4 hover:text-black hover:bg-white hover:border border-black transition-all duration-300 ease-in-out"
+                    : "px-6 py-4 border border-black transition-all duration-300 ease-in-out rounded-full hover:bg-black hover:text-white"
                 }
               >
                 Add Blog
@@ -151,7 +159,9 @@ const Navbar = () => {
               <NavLink
                 to="/wishlist"
                 className={({ isActive }) =>
-                  isActive ? "text-white bg-black  rounded-full px-6 py-4 hover:text-black hover:bg-white hover:border border-black transition-all duration-300 ease-in-out" : "px-6 py-4 border border-black transition-all duration-300 ease-in-out rounded-full hover:bg-black hover:text-white"
+                  isActive
+                    ? "text-white bg-black  rounded-full px-6 py-4 hover:text-black hover:bg-white hover:border border-black transition-all duration-300 ease-in-out"
+                    : "px-6 py-4 border border-black transition-all duration-300 ease-in-out rounded-full hover:bg-black hover:text-white"
                 }
               >
                 Wishlist
@@ -210,7 +220,9 @@ const Navbar = () => {
             <NavLink
               to="/login"
               className={({ isActive }) =>
-                isActive ? "text-white bg-black  rounded-full px-6 py-4 hover:text-black hover:bg-white hover:border border-black transition-all duration-300 ease-in-out" : "px-6 py-4 border border-black transition-all duration-300 ease-in-out rounded-full hover:bg-black hover:text-white"
+                isActive
+                  ? "text-white bg-black  rounded-full px-6 py-4 hover:text-black hover:bg-white hover:border border-black transition-all duration-300 ease-in-out"
+                  : "px-6 py-4 border border-black transition-all duration-300 ease-in-out rounded-full hover:bg-black hover:text-white"
               }
             >
               Login
@@ -218,7 +230,9 @@ const Navbar = () => {
             <NavLink
               to="/register"
               className={({ isActive }) =>
-                isActive ? "text-white bg-black  rounded-full px-6 py-4 hover:text-black hover:bg-white hover:border border-black transition-all duration-300 ease-in-out" : "px-6 py-4 border border-black transition-all duration-300 ease-in-out rounded-full hover:bg-black hover:text-white"
+                isActive
+                  ? "text-white bg-black  rounded-full px-6 py-4 hover:text-black hover:bg-white hover:border border-black transition-all duration-300 ease-in-out"
+                  : "px-6 py-4 border border-black transition-all duration-300 ease-in-out rounded-full hover:bg-black hover:text-white"
               }
             >
               Register

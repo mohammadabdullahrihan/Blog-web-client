@@ -16,7 +16,6 @@ const Footer = () => {
               <div className="">
                 <img src={logo} alt="" />
               </div>
-  
             </div>
             <h1 className="mt-3 text-gray-500">
               Chill Gamer is the ultimate destination <br /> for playing
