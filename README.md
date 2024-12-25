@@ -4,7 +4,7 @@
 The Blog Website is a full-stack application designed for users to explore, share, and manage blogs. It features a user-friendly interface, secure authentication, wishlist functionality, comment management, and responsive design for enhanced user experience.
 
 ### Live URL
-[Visit the Blog Website](#)
+https://writingx-assignment-11.netlify.app/
 
 ## Key Features
 - **User Authentication**: JWT-based authentication with secure cookie management.
