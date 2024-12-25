@@ -98,18 +98,25 @@ const Home = () => {
               <img className="w-[400px] h-[300px] object-cover " src={blog?.image} alt="" />
               <h3 className="text-xl text-white font-semibold mb-2">{blog.title}</h3>
               <p className="text-white mb-4">{blog.shortDescription}</p>
-              <button
-                onClick={() => handleAddToWishlist(blog)}
-                className="text-black bg-white  rounded-full px-6 py-4 hover:text-white hover:bg-black hover:border-2 border-white transition-all duration-300 ease-in-out mr-5"
-              >
-                Add to Wishlist
-              </button>
+              {
+                user ? [
+                  <>
+                    <button
+                      onClick={() => handleAddToWishlist(blog)}
+                      className="text-black bg-white  rounded-full px-6 py-4 hover:text-white hover:bg-black hover:border-2 border-white transition-all duration-300 ease-in-out mr-5"
+                    >
+                      Add to Wishlist
+                    </button>
 
-              <Link to={`/blog/${blog._id}`}>
-                <button className="text-black bg-white  rounded-full px-6 py-4 hover:text-white hover:bg-black hover:border-2 border-white transition-all duration-300 ease-in-out" >
-                  Details
-                </button>
-              </Link>
+                    <Link to={`/blog/${blog._id}`}>
+                      <button className="text-black bg-white  rounded-full px-6 py-4 hover:text-white hover:bg-black hover:border-2 border-white transition-all duration-300 ease-in-out" >
+                        Details
+                      </button>
+                    </Link>
+                  </>
+                ]
+                  : []
+              }
             </div>
           ))}
         </div>
