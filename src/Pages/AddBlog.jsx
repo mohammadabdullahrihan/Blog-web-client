@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { AuthContext } from "../AuthProvider"; // Update the path as necessary
-
+import { toast } from "react-toastify";
 const AddBlogPage = () => {
   const { user } = useContext(AuthContext); // Get the current user from AuthContext
 
@@ -40,7 +40,7 @@ const AddBlogPage = () => {
         if (!response.ok) {
           throw new Error("Failed to add blog");
         }
-        alert("Blog added successfully!");
+        toast.success("Blog added successfully!");
         setBlogData({
           title: "",
           image: "",

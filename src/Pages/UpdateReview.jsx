@@ -9,9 +9,10 @@ const UpdateBlog = () => {
   const [blog, setBlog] = useState(null);
   const [formData, setFormData] = useState({
     title: "",
-    content: "",
     coverImage: "",
     categories: "",
+    shortDescription: "",
+    longDescription: "",
     authorEmail: user?.email || "",
     authorName: user?.displayName || "",
   });
@@ -26,9 +27,12 @@ const UpdateBlog = () => {
         setBlog(data);
         setFormData({
           title: data.title || "",
-          content: data.content || "",
           coverImage: data.coverImage || "",
           categories: data.categories || "",
+          shortDescription: data.shortDescription || "",
+          longDescription: data.longDescription || "",
+          authorEmail: user?.email || "",
+          authorName: user?.displayName || "",
         });
       } catch (error) {
         toast.error("Failed to load blog data.");
@@ -36,7 +40,7 @@ const UpdateBlog = () => {
       }
     };
     fetchBlog();
-  }, [id]);
+  }, [id, user]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -68,7 +72,15 @@ const UpdateBlog = () => {
     }
   };
 
-  if (!blog) return <div>Loading blog data...</div>;
+  if (!blog) return <div>
+    <div className="flex justify-center mt-[200px] lg:mt-[320px]">
+      <div className="flex-col gap-4 w-full flex items-center justify-center">
+        <div className="lg:w-20 lg:h-20 border-4 border-transparent text-blue-400 text-4xl animate-spin flex items-center justify-center border-t-black rounded-full">
+          <div className="w-16 h-16 border-4 border-transparent text-red-400 text-2xl animate-spin flex items-center justify-center border-t-black rounded-full"></div>
+        </div>
+      </div>
+    </div>
+  </div>;
 
   return (
     <div className="max-w-lg my-8 p-6 bg-gray-100 rounded container-3 md:ml-[100px]">
@@ -82,7 +94,7 @@ const UpdateBlog = () => {
             type="email"
             id="authorEmail"
             className="w-full border rounded-2xl px-4 py-5 bg-gray-100"
-            value={user?.email || ""}
+            value={formData.authorEmail}
             readOnly
           />
         </div>
@@ -95,7 +107,7 @@ const UpdateBlog = () => {
             type="text"
             id="authorName"
             className="w-full border rounded-2xl px-4 py-5 bg-gray-100"
-            value={user?.displayName || ""}
+            value={formData.authorName}
             readOnly
           />
         </div>
@@ -110,17 +122,6 @@ const UpdateBlog = () => {
             onChange={handleChange}
             required
           />
-        </div>
-
-        <div className="mb-4">
-          <label className="block font-medium mb-1">Blog Content</label>
-          <textarea
-            className="bg-gray-100 mt-5 rounded-lg p-[35px] py-[20px]"
-            name="content"
-            value={formData.content}
-            onChange={handleChange}
-            required
-          ></textarea>
         </div>
 
         <div className="mb-4">
@@ -146,6 +147,28 @@ const UpdateBlog = () => {
             placeholder="e.g., Technology, Lifestyle"
             required
           />
+        </div>
+
+        <div className="mb-4">
+          <label className="block font-medium mb-1">Short Description</label>
+          <textarea
+            className="bg-gray-100 mt-5 rounded-lg p-[35px] py-[20px]"
+            name="shortDescription"
+            value={formData.shortDescription}
+            onChange={handleChange}
+            required
+          ></textarea>
+        </div>
+
+        <div className="mb-4">
+          <label className="block font-medium mb-1">Long Description</label>
+          <textarea
+            className="bg-gray-100 mt-5 rounded-lg p-[35px] py-[20px]"
+            name="longDescription"
+            value={formData.longDescription}
+            onChange={handleChange}
+            required
+          ></textarea>
         </div>
 
         <button type="submit" className="btn">
