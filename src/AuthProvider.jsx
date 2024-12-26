@@ -12,7 +12,7 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      if (currentUser?.email) {
+      if (currentUser) {
         const user = { email: currentUser?.email };
         axios
           .post("https://blog-web-server-kappa.vercel.app/jwt", user, {
